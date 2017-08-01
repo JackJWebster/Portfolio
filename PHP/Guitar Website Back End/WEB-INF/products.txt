@@ -1,0 +1,4 @@
+eg01|Gibson SGJ|599.99
+ag01|Simon & Patrick Luthier|699.99
+ag02|Rochester FD200|149.99
+bg01|Bass Collection Californian|649.99

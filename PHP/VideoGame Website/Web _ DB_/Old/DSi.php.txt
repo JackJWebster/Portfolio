@@ -1,0 +1,31 @@
+﻿<?php
+$con=mysqli_connect(mysql-server-1,"jw242","webdesigndb","jw242");
+// Check connection
+if (mysqli_connect_errno())
+  {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  }
+
+
+$result = mysqli_query($con,"SELECT * FROM GameList");
+
+
+echo "<table border='1'>
+<tr>
+<th>Games</th>
+<th>Loyalty Points</th>
+</tr>";
+
+
+while($row = mysqli_fetch_array($result))
+  {
+  echo "<tr>";
+  echo "<td>" . $row['gameName'] . "</td>";
+  echo "<td>" . $row['pointsValue'] . "</td>";
+  echo "</tr>";
+  }
+echo "</table>";
+
+
+mysqli_close($con);
+?>

@@ -1,0 +1,20 @@
+<?php
+
+include(dirname(__FILE__)."/../Core/connection.php");
+
+$getCourses = mysqli_stmt_init($link);
+
+mysqli_stmt_prepare($getCourses, "SELECT Level FROM levels");  
+mysqli_stmt_execute($getCourses); 
+$result = mysqli_stmt_get_result($getCourses);
+
+$levels = []
+
+while($row = mysqli_fetch_assoc($result)){
+	array_push($levels,$row["Level"]);
+}
+
+echo json_encode($levels);
+
+mysqli_close($link);
+?>
